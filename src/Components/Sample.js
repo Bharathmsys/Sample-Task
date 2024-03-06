@@ -6,8 +6,7 @@ const Sample = () => {
   let url = "https://api.postalpincode.in/pincode/";
   const handleEvent = async () => {
     try {
-      let mainUrl = url + pincode;
-      let request = await fetch(mainUrl);
+      let request = await fetch(`https://api.postalpincode.in/pincode/${pincode}`);
       let respone = await request.json();
       if (
         respone[0].PostOffice === null ||
@@ -36,7 +35,7 @@ const Sample = () => {
       <button className="button" onClick={handleEvent}>add</button>
 
       <div>
-        {data.map((each) => {
+        {data?.map((each) => {
           return (
             <div className="container">
               <h4>Name : {each.Name}</h4>
