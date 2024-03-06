@@ -6,8 +6,8 @@ const Sample = () => {
   let url = "https://api.postalpincode.in/pincode/";
   const handleEvent = async () => {
     try {
-      let mainurl = url + pincode;
-      let request = await fetch(mainurl);
+      let mainUrl = url + pincode;
+      let request = await fetch(mainUrl);
       let respone = await request.json();
       if (
         respone[0].PostOffice === null ||
@@ -22,7 +22,6 @@ const Sample = () => {
     }
   };
 
-  console.log(data);
   return (
     <div>
       <input
